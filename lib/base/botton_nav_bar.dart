@@ -1,5 +1,5 @@
+import 'package:airplane/screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -11,22 +11,23 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
-    const Center(child: Text("Home")),
+    const HomeScreen(),
     const Center(child: Text("Search")),
     const Center(child: Text("Tickets")),
     const Center(child: Text("Profile"))
   ];
   int _selectedIndex = 0;
+
   void _onItemTapped(int index) {
-    setState((){
+    setState(() {
       _selectedIndex = index;
     });
     print("Tapped index is $_selectedIndex");
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Hello Flutter")),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,

@@ -2,12 +2,7 @@ import 'package:airplane/base/botton_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-
-  var myList = [
-    "Flutter",
-    "Laravel",
-    "PHP"
-  ];
+  var myList = ["Flutter", "Laravel", "PHP"];
 
   // print("${myList.length}");
 
@@ -19,10 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: const BottomNavBar()
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: const BottomNavBar());
   }
 }
